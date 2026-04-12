@@ -51,7 +51,7 @@ const FP = (a) => `K${(Number(a)||0).toLocaleString()}`;
 // Add VITE_SLACK_WEBHOOK_URL=https://hooks.slack.com/services/... to your .env
 // All activity log entries post to Slack. Destructive actions get orange,
 // errors get red. If the env var is missing the helper silently does nothing.
-const SLACK_WEBHOOK = 'https://hooks.slack.com/services/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';
+const SLACK_WEBHOOK = import.meta.env.VITE_SLACK_WEBHOOK_URL || '';
 
 const DESTRUCTIVE_KEYWORDS = [
   'ban','banned','suspend','suspended','delete','deleted','remove','removed',
